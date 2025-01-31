@@ -1,0 +1,49 @@
+
+<fieldset>
+    <legend>Información del usuario</legend>
+    <form action="" class="form-container" [formGroup]="formRegister" (submit)="registerSubmit()">
+        <div class="data-text">
+            <label for="name">Nombre</label>
+            <input type="text" name="" id="name" formControlName="name">
+            @if (formRegister.get('name')?.errors?.['required'] && 
+             formRegister.get('name')?.touched) {
+            <div class="error">El nombre es requerido</div>
+             }
+        </div>
+
+        <div class="data-text">
+            <label for="lastName">Apellido</label>
+            <input type="text" name="" id="lastName" formControlName="last">
+            @if (formRegister.get('last')?.errors?.['required'] && 
+             formRegister.get('last')?.touched) {
+            <div class="error">El apellido es requerido</div>
+             }
+        </div>
+        <div class="data-text">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" formControlName="email">
+            @if (formRegister.get('email')?.errors?.['required'] && 
+             formRegister.get('email')?.touched) {
+            <div class="error">El email es requerido</div>
+             }
+        </div>
+        <div class="data-text">
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" id="password" formControlName="password">
+            @if (formRegister.get('password')?.errors?.['required'] && 
+            formRegister.get('password')?.touched) {
+           <div class="error">La contraseña es requerida</div>
+            }
+        </div>
+      
+        <div><button [disabled]="formRegister.invalid">Registrar</button></div>
+    </form>
+</fieldset>
+<p>Datos:</p>
+@if(data){
+    <p class="datos-register">{{data.name}}</p>
+    <p class="datos-register">{{data.last}}</p>
+    <p class="datos-register">{{data.email}}</p>
+    <p class="datos-register">{{data.password}}</p>
+}
+

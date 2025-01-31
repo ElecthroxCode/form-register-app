@@ -1,0 +1,5 @@
+fieldset{width: 260px;}
+.form-container{padding: 10px;}
+.data-text{display: flex; flex-direction: column; margin: 16px 0;}
+button{color: rgb(243, 100, 4);}
+.error{color: red; font-size: 0.8rem;}
